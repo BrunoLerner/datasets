@@ -1,0 +1,6 @@
+Presidentes:
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?presName WHERE {
+  ?presName dct:subject <http://dbpedia.org/resource/Category:Presidents_of_Brazil>.
+}
