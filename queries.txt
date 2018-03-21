@@ -43,6 +43,7 @@ SELECT ?presName, ?inicio, ?cargo WHERE {
   ?TermPeriod dbo:activeYearsStartDate ?inicio.
   ?TermPeriod dbo:office ?cargo.
   ?presName rdf:type <http://dbpedia.org/ontology/Person>.
+  FILTER regex(?cargo , 'President of Brazil').
 }
 
 /* Depois fazemos a pesquisa que retorna só aqueles com fim */
@@ -55,6 +56,7 @@ SELECT ?presName, ?fim, ?cargo WHERE {
   ?TermPeriod dbo:activeYearsEndDate ?fim.
   ?TermPeriod dbo:office ?cargo.
   ?presName rdf:type <http://dbpedia.org/ontology/Person>.
+  FILTER regex(?cargo , 'President of Brazil').
 }
 
 /* Por fim podemos fazer um left join entre o primeiro e o segundo */
