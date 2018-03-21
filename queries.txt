@@ -5,3 +5,56 @@ SELECT ?presName WHERE {
   ?presName dct:subject <http://dbpedia.org/resource/Category:Presidents_of_Brazil>.
   ?presName rdf:type <http://dbpedia.org/ontology/Person>.
 }
+
+Com data de nascimento:
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?presName, ?birthday WHERE {
+  ?presName dct:subject <http://dbpedia.org/resource/Category:Presidents_of_Brazil>;
+  dbo:birthDate ?birthday.
+  ?presName rdf:type <http://dbpedia.org/ontology/Person>.
+}
+
+Com cargo e datas:
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?presName, ?inicio, ?fim, ?cargo WHERE {
+  ?presName dct:subject <http://dbpedia.org/resource/Category:Presidents_of_Brazil>;
+  dbo:termPeriod ?TermPeriod.
+  ?TermPeriod dbo:activeYearsStartDate ?inicio.
+  ?TermPeriod dbo:activeYearsEndDate ?fim.
+  ?TermPeriod dbo:office ?cargo.
+  ?presName rdf:type <http://dbpedia.org/ontology/Person>.
+}
+
+/* Dessa forma só pegamos os presidentes que terminaram o mandato */
+/* Minha solução é a seguinte: */
+/* Começamos com a seguinte pesquisa que retornará todos os presidentes com a data de início */
+
+Com cargo e data de início:
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?presName, ?inicio, ?cargo WHERE {
+  ?presName dct:subject <http://dbpedia.org/resource/Category:Presidents_of_Brazil>;
+  dbo:termPeriod ?TermPeriod.
+  ?TermPeriod dbo:activeYearsStartDate ?inicio.
+  ?TermPeriod dbo:office ?cargo.
+  ?presName rdf:type <http://dbpedia.org/ontology/Person>.
+}
+
+/* Depois fazemos a pesquisa que retorna só aqueles com fim */
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?presName, ?fim, ?cargo WHERE {
+  ?presName dct:subject <http://dbpedia.org/resource/Category:Presidents_of_Brazil>;
+  dbo:termPeriod ?TermPeriod.
+  ?TermPeriod dbo:activeYearsEndDate ?fim.
+  ?TermPeriod dbo:office ?cargo.
+  ?presName rdf:type <http://dbpedia.org/ontology/Person>.
+}
+
+/* Por fim podemos fazer um left join entre o primeiro e o segundo */
