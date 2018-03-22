@@ -1,0 +1,54 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/sw/DataAccess/rf1/result2.xsd">
+ <head>
+  <variable name="presName"/>
+  <variable name="fim"/>
+  <variable name="cargo"/>
+ </head>
+ <results distinct="false" ordered="true">
+  <result>
+   <binding name="presName"><uri>http://dbpedia.org/resource/Itamar_Franco</uri></binding>
+   <binding name="fim"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1995-01-01</literal></binding>
+   <binding name="cargo"><literal>President of Brazil</literal></binding>
+  </result>
+  <result>
+   <binding name="presName"><uri>http://dbpedia.org/resource/Itamar_Franco</uri></binding>
+   <binding name="fim"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1992-12-29</literal></binding>
+   <binding name="cargo"><literal>Vice President of Brazil</literal></binding>
+  </result>
+  <result>
+   <binding name="presName"><uri>http://dbpedia.org/resource/José_Sarney</uri></binding>
+   <binding name="fim"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1990-03-15</literal></binding>
+   <binding name="cargo"><literal>President of Brazil</literal></binding>
+  </result>
+  <result>
+   <binding name="presName"><uri>http://dbpedia.org/resource/Dilma_Rousseff</uri></binding>
+   <binding name="fim"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2016-08-31</literal></binding>
+   <binding name="cargo"><literal>36thPresident of Brazil</literal></binding>
+  </result>
+  <result>
+   <binding name="presName"><uri>http://dbpedia.org/resource/Fernando_Henrique_Cardoso</uri></binding>
+   <binding name="fim"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2003-01-01</literal></binding>
+   <binding name="cargo"><literal>President of Brazil</literal></binding>
+  </result>
+  <result>
+   <binding name="presName"><uri>http://dbpedia.org/resource/Luiz_Inácio_Lula_da_Silva</uri></binding>
+   <binding name="fim"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2011-01-01</literal></binding>
+   <binding name="cargo"><literal>35thPresident of Brazil</literal></binding>
+  </result>
+  <result>
+   <binding name="presName"><uri>http://dbpedia.org/resource/Hermes_da_Fonseca</uri></binding>
+   <binding name="fim"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1914-11-15</literal></binding>
+   <binding name="cargo"><literal>President of Brazil</literal></binding>
+  </result>
+  <result>
+   <binding name="presName"><uri>http://dbpedia.org/resource/Júlio_Prestes</uri></binding>
+   <binding name="fim"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1930-05-21</literal></binding>
+   <binding name="cargo"><literal>President of Brazil</literal></binding>
+  </result>
+  <result>
+   <binding name="presName"><uri>http://dbpedia.org/resource/Michel_Temer</uri></binding>
+   <binding name="fim"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2016-08-31</literal></binding>
+   <binding name="cargo"><literal>24thVice President of Brazil</literal></binding>
+  </result>
+ </results>
+</sparql>
