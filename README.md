@@ -9,6 +9,3 @@ https://www.draw.io/#G1Y3iVnQ3uAz-hyMYcZT2FYwte1Im6LXyV
 
 http://databank.worldbank.org/data/reports.aspx?source=poverty-and-equity#
 
-### Modelagem ER
-
-https://www.draw.io/#G1Y3iVnQ3uAz-hyMYcZT2FYwte1Im6LXyV
