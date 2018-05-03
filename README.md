@@ -8,6 +8,8 @@ https://www.draw.io/#G1Y3iVnQ3uAz-hyMYcZT2FYwte1Im6LXyV
 
 ## Data sources
 ### DBPedia
+https://dbpedia.org/
 
+### World bank
 http://databank.worldbank.org/data/reports.aspx?source=poverty-and-equity#
 
