@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<result>
+  <url><![CDATA[http://api.pgi.gov.br/api/1/serie/1873.json]]></url>
+  <id>1873</id>
+  <nome><![CDATA[Valor PIB Nacional]]></nome>
+  <nome_estendido><![CDATA[Valor do Produto Interno Bruto Nacional]]></nome_estendido>
+  <descricao><![CDATA[Valor do Produto Interno Bruto nacional. Valores divulgados pelo IBGE]]></descricao>
+  <inicio><![CDATA[1995]]></inicio>
+  <final><![CDATA[2013]]></final>
+  <formatacao><![CDATA[0]]></formatacao>
+  <data_atualizacao><![CDATA[2014-02-27 20:13:46.877482]]></data_atualizacao>
+  <aditividade><![CDATA[0]]></aditividade>
+  <tempo_aditividade><![CDATA[0]]></tempo_aditividade>
+  <portal_dados_abertos>false</portal_dados_abertos>
+  <disponibilizacao>
+    <disponibilizacao><![CDATA[365 dias]]></disponibilizacao>
+    <dias>365</dias>
+  </disponibilizacao>
+  <estado>
+    <estado><![CDATA[Em uso]]></estado>
+  </estado>
+  <fonte_gestora>
+    <url><![CDATA[http://api.pgi.gov.br/api/1/fonte/266.json]]></url>
+    <id>266</id>
+    <nome><![CDATA[MP/GABMIN]]></nome>
+    <descricao><![CDATA[Gabinete do Ministro]]></descricao>
+    <tipo><![CDATA[1]]></tipo>
+    <orgao_primeiro_escalao>
+      <nome><![CDATA[MP]]></nome>
+      <descricao><![CDATA[Ministério do Planejamento, Orçamento e Gestão]]></descricao>
+    </orgao_primeiro_escalao>
+  </fonte_gestora>
+  <fonte_provedora>
+    <url><![CDATA[http://api.pgi.gov.br/api/1/fonte/394.json]]></url>
+    <id>394</id>
+    <nome><![CDATA[IBGE]]></nome>
+    <descricao><![CDATA[Fundação Instituto Brasileiro de Geografia e Estatística]]></descricao>
+    <tipo><![CDATA[2]]></tipo>
+    <orgao_primeiro_escalao>
+      <nome><![CDATA[MP]]></nome>
+      <descricao><![CDATA[Ministério do Planejamento, Orçamento e Gestão]]></descricao>
+    </orgao_primeiro_escalao>
+  </fonte_provedora>
+  <grupo_informacao>
+    <url><![CDATA[http://api.pgi.gov.br/api/1/grupo/483.json]]></url>
+    <id>483</id>
+    <nome><![CDATA[Produto Interno Bruto - PIB]]></nome>
+    <descricao><![CDATA[Valores correntes do Produto Interno Bruto]]></descricao>
+  </grupo_informacao>
+  <base_territorial>
+    <base_territorial><![CDATA[Nacional]]></base_territorial>
+  </base_territorial>
+  <periodicidade>
+    <periodicidade><![CDATA[Anual]]></periodicidade>
+  </periodicidade>
+  <multiplicador>
+    <id>1</id>
+    <nome><![CDATA[]]></nome>
+  </multiplicador>
+  <produto>
+    <nome><![CDATA[Valor]]></nome>
+    <descricao><![CDATA[Valor]]></descricao>
+  </produto>
+  <publicacao>
+    <status_publicacao><![CDATA[Dados Publicados]]></status_publicacao>
+  </publicacao>
+  <unidade_medida>
+    <url><![CDATA[http://api.pgi.gov.br/api/1/unidade/3.json]]></url>
+    <id>3</id>
+    <nome><![CDATA[Real (R$)]]></nome>
+    <unidade_medida><![CDATA[R$]]></unidade_medida>
+  </unidade_medida>
+  <orgao_primeiro_escalao>
+    <nome><![CDATA[MP]]></nome>
+    <descricao><![CDATA[Ministério do Planejamento, Orçamento e Gestão]]></descricao>
+  </orgao_primeiro_escalao>
+  <valores>
+    <entry>
+      <valor>979277002000</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>1998</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>843963999000</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>1996</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>1064999711804</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>1999</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>1179482000001</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2000</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>1302135029171</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2001</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>1477821769003</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2002</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>1699947693996</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2003</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>1941498358001</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2004</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>2147239291997</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2005</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>2369483546173</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2006</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>2661344524999</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2007</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>3032203490413</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2008</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>3239404052999</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2009</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>705640892091</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>1995</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>939146001000</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>1997</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>3770084871577</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2010</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>4143013336541</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2011</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>4402537109407</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2012</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+    <entry>
+      <valor>4837950000000</valor>
+      <brasil_ibge>1</brasil_ibge>
+      <ano>2013</ano>
+      <valor_referencia>false</valor_referencia>
+    </entry>
+  </valores>
+</result>
