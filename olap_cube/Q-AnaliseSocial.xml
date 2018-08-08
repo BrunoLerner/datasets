@@ -1,4 +1,4 @@
-<Schema name="AnaliseSocial">
+<Schema name="Q-AnaliseSocial">
   <Dimension type="StandardDimension" visible="true" name="Dimens&#227;oTempo" caption="Tempo">
     <Hierarchy name="Ano" visible="true" hasAll="true" allMemberName="Tudo" primaryKey="ano">
       <Table name="dim_tempo" schema="public">
@@ -7,12 +7,12 @@
       </Level>
     </Hierarchy>
   </Dimension>
-  <Cube name="AnaliseSocial" visible="true" cache="true" enabled="true">
-    <Table name="fact_1" schema="public" alias="Fato_Pobreza">
+  <Cube name="Q-AnaliseSocial" visible="true" cache="true" enabled="true">
+    <Table name="fact" schema="public" alias="Fato_Quality">
     </Table>
     <DimensionUsage source="Dimens&#227;oTempo" name="Tempo" caption="Ano" visible="true" foreignKey="ano">
     </DimensionUsage>
-    <Measure name="Miseraveis" column="pobres_quantidade" datatype="Numeric" aggregator="sum" visible="true">
+    <Measure name="quality" column="quality" datatype="Numeric" aggregator="sum" visible="true">
     </Measure>
   </Cube>
 </Schema>
