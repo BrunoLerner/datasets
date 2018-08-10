@@ -1,6 +1,6 @@
-<Schema name="New Schema1">
+<Schema name="Q-analiseSocial">
   <Dimension type="StandardDimension" visible="true" name="dimTempo" caption="Tempo">
-    <Hierarchy name="Ano" visible="true" hasAll="true" allMemberName="Tudo" primaryKey="tempo">
+    <Hierarchy name="Ano" visible="true" hasAll="true" allMemberName="Tudo" primaryKey="ano">
       <Table name="dim_tempo" schema="public" alias="">
       </Table>
       <Level name="Ano" visible="true" column="tempo" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Ano">
@@ -10,7 +10,7 @@
   <Cube name="Q-analiseSocial" visible="true" cache="true" enabled="true">
     <Table name="fact_1" schema="public" alias="Fato_Qualidade">
     </Table>
-    <DimensionUsage source="dimTempo" name="Tempo" caption="Ano" visible="true" foreignKey="tempo">
+    <DimensionUsage source="dimTempo" name="Tempo" caption="Ano" visible="true" foreignKey="ano">
     </DimensionUsage>
     <Measure name="Qualidade" column="qualidade" aggregator="avg" visible="true">
     </Measure>
