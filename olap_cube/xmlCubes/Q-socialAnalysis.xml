@@ -27,7 +27,7 @@
       </Level>
     </Hierarchy>
   </Dimension>
-  <Cube name="q-AnaliseSocial" visible="true" cache="true" enabled="true">
+  <Cube name="Q-socialAnalysis" visible="true" cache="true" enabled="true">
     <Table name="q_fact" schema="public" alias="FatoQualidade">
     </Table>
     <DimensionUsage source="DimTempo" name="Tempo" caption="Ano" visible="true" foreignKey="ano">
