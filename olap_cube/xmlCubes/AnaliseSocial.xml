@@ -1,0 +1,46 @@
+<Schema name="AnaliseSocial">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimTempo" caption="Tempo">
+    <Hierarchy name="Ano" visible="true" hasAll="true" allMemberName="Tudo" primaryKey="ano">
+      <Table name="dim_tempo" schema="public" alias="tempo">
+      </Table>
+      <Level name="Ano" visible="true" column="ano" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Ano">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimPessoa" caption="Pessoa">
+    <Hierarchy name="Pessoa" visible="true" hasAll="true" allMemberName="Tudo" primaryKey="nome">
+      <Table name="dim_person" schema="public" alias="pessoa">
+      </Table>
+      <Level name="Nome" visible="true" column="nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Nome">
+      </Level>
+      <Level name="Genero" visible="true" column="genero" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Genero">
+      </Level>
+      <Level name="Cargo" visible="true" column="cargo" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Cargo">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimCargo" caption="Cargo">
+    <Hierarchy name="Cargo" visible="true" hasAll="true" allMemberName="Tudo" primaryKey="cargo">
+      <Table name="dim_cargo" schema="public" alias="cargo">
+      </Table>
+      <Level name="Cargo" visible="true" column="cargo" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Cargo">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="AnaliseSocial" visible="true" cache="true" enabled="true">
+    <Table name="fact_1" schema="public" alias="Fato_Pobreza">
+    </Table>
+    <DimensionUsage source="DimTempo" name="Tempo" caption="Ano" visible="true" foreignKey="ano" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimPessoa" name="Pessoa" caption="Nome" visible="true" foreignKey="nome" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimCargo" name="Cargo" caption="Cargo" visible="true" foreignKey="cargo" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Miseraveis" column="pobres_quantidade" datatype="Numeric" aggregator="max" caption="Miseraveis" visible="true">
+    </Measure>
+    <Measure name="PIB" column="pib" datatype="Numeric" aggregator="max" caption="PIB" visible="true">
+    </Measure>
+    <Measure name="Campi" column="campi" datatype="Integer" aggregator="max" caption="Campi" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
