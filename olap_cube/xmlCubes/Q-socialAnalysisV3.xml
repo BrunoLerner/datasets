@@ -1,5 +1,5 @@
 <Schema name="Q-socialAnalysis">
-  <Dimension type="StandardDimension" visible="true" name="DimTempo" caption="Tempo">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimTempo" caption="Tempo">
     <Hierarchy name="Ano" visible="true" hasAll="true" allMemberName="Tudo" primaryKey="ano">
       <Table name="dim_tempo" schema="public" alias="tempo">
       </Table>
@@ -7,12 +7,28 @@
       </Level>
     </Hierarchy>
   </Dimension>
+  <Dimension type="StandardDimension" visible="true" name="DimPessoa" caption="Pessoa">
+    <Hierarchy name="Pessoa" visible="true" hasAll="true" allMemberName="Tudo" primaryKey="nome">
+      <Table name="dim_person" schema="public" alias="pessoa">
+      </Table>
+      <Level name="Nome" visible="true" column="nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Nome">
+      </Level>
+      <Level name="Genero" visible="true" column="genero" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Genero">
+      </Level>
+      <Level name="Cargo" visible="true" column="cargo" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Cargo">
+      </Level>
+    </Hierarchy>
+  </Dimension>
   <Cube name="Q-socialAnalysis" visible="true" cache="true" enabled="true">
     <Table name="q_fact" schema="public" alias="fatoQualidade">
     </Table>
-    <DimensionUsage source="DimTempo" name="Tempo" caption="Ano" visible="true" foreignKey="ano">
+    <DimensionUsage source="DimTempo" name="Tempo" caption="Ano" visible="true" foreignKey="ano" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimPessoa" name="Pessoa" caption="Nome" visible="true" foreignKey="nome">
     </DimensionUsage>
     <Measure name="corretudeMiseraveis" column="q_corretude_qtdpobres" datatype="Numeric" aggregator="min" caption="corretudeMiseraveis" visible="true">
+    </Measure>
+    <Measure name="completudeMiseraveis" column="q_completude_pobres_quantidade" datatype="Numeric" aggregator="max" caption="completudeMiseraveis" visible="true">
     </Measure>
   </Cube>
 </Schema>
