@@ -78,23 +78,23 @@ ALTER TABLE public.dim_tempo OWNER TO postgres;
 
 --
 -- TOC entry 173 (class 1259 OID 16437)
--- Name: q_fact; Type: TABLE; Schema: public; Owner: postgres
+-- Name: fact_1; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.q_fact (
+CREATE TABLE public.fact_1 (
     ano character varying,
+    nome character varying,
+    cargo character varying,
     q_corretude_qtdpobres double precision,
     q_corretude_pib double precision,
     q_corretude_campi double precision,
-    nome character varying,
-    cargo character varying,
     q_completude_pobres_quantidade double precision,
     q_completude_pib double precision,
     q_completude_campi double precision
 );
 
 
-ALTER TABLE public.q_fact OWNER TO postgres;
+ALTER TABLE public.fact_1 OWNER TO postgres;
 
 --
 -- TOC entry 2005 (class 0 OID 16446)
@@ -259,10 +259,10 @@ COPY public.dim_tempo (ano) FROM stdin;
 --
 -- TOC entry 2004 (class 0 OID 16437)
 -- Dependencies: 173
--- Data for Name: q_fact; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: fact_1; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.q_fact (ano, q_corretude_qtdpobres, q_corretude_pib, q_corretude_campi, nome, cargo, q_completude_pobres_quantidade, q_completude_pib, q_completude_campi) FROM stdin;
+COPY public.fact_1 (ano, q_corretude_qtdpobres, q_corretude_pib, q_corretude_campi, nome, cargo, q_completude_pobres_quantidade, q_completude_pib, q_completude_campi) FROM stdin;
 1910	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	\N	\N	\N
 1911	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	\N	\N	\N
 1912	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	\N	\N	\N
