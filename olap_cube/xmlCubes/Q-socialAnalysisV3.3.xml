@@ -1,0 +1,52 @@
+<Schema name="Q-socialAnalysis">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimTempo" caption="Tempo">
+    <Hierarchy name="Ano" visible="true" hasAll="true" allMemberName="Tudo" primaryKey="ano">
+      <Table name="dim_tempo" schema="public" alias="tempo">
+      </Table>
+      <Level name="Ano" visible="true" column="ano" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Ano">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimPessoa" caption="Pessoa">
+    <Hierarchy name="Pessoa" visible="true" hasAll="true" allMemberName="Tudo" primaryKey="nome">
+      <Table name="dim_person" schema="public" alias="pessoa">
+      </Table>
+      <Level name="Nome" visible="true" column="nome" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Nome">
+      </Level>
+      <Level name="Genero" visible="true" column="genero" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Genero">
+      </Level>
+      <Level name="Cargo" visible="true" column="cargo" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Cargo">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimCargo" caption="Cargo">
+    <Hierarchy name="Cargo" visible="true" hasAll="true" allMemberName="Tudo" primaryKey="cargo">
+      <Table name="dim_cargo" schema="public" alias="cargo">
+      </Table>
+      <Level name="Cargo" visible="true" column="cargo" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Cargo">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="Q-socialAnalysis" visible="true" cache="true" enabled="true">
+    <Table name="q_fact" schema="public" alias="fatoQualidade">
+    </Table>
+    <DimensionUsage source="DimTempo" name="Tempo" caption="Ano" visible="true" foreignKey="ano" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimPessoa" name="Pessoa" caption="Nome" visible="true" foreignKey="nome" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimCargo" name="Cargo" caption="Cargo" visible="true" foreignKey="cargo" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="corretudeMiseraveis" column="q_corretude_qtdpobres" datatype="Numeric" aggregator="min" caption="corretudeMiseraveis" visible="true">
+    </Measure>
+    <Measure name="completudeMiseraveis" column="q_completude_pobres_quantidade" datatype="Numeric" aggregator="max" caption="completudeMiseraveis" visible="true">
+    </Measure>
+    <Measure name="corretudeCampi" column="q_corretude_campi" datatype="Integer" aggregator="max" caption="corretudeCampi" visible="true">
+    </Measure>
+    <Measure name="completudeCampi" column="q_completude_campi" datatype="Numeric" aggregator="max" caption="completudeCampi" visible="true">
+    </Measure>
+    <Measure name="corretudePIB" column="q_corretude_pib" datatype="Numeric" aggregator="max" caption="corretudePIB" visible="true">
+    </Measure>
+    <Measure name="completudePIB" column="q_completude_pib" datatype="Numeric" aggregator="max" caption="completudePIB" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
