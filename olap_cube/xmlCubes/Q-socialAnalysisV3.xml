@@ -7,7 +7,7 @@
       </Level>
     </Hierarchy>
   </Dimension>
-  <Dimension type="StandardDimension" visible="true" name="DimPessoa" caption="Pessoa">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimPessoa" caption="Pessoa">
     <Hierarchy name="Pessoa" visible="true" hasAll="true" allMemberName="Tudo" primaryKey="nome">
       <Table name="dim_person" schema="public" alias="pessoa">
       </Table>
@@ -19,16 +19,34 @@
       </Level>
     </Hierarchy>
   </Dimension>
+  <Dimension type="StandardDimension" visible="true" name="DimCargo" caption="Cargo">
+    <Hierarchy name="New Hierarchy 0" visible="true" hasAll="true">
+      <Table name="dim_cargo" schema="public" alias="cargo">
+      </Table>
+      <Level name="Cargo" visible="true" column="cargo" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Cargo">
+      </Level>
+    </Hierarchy>
+  </Dimension>
   <Cube name="Q-socialAnalysis" visible="true" cache="true" enabled="true">
     <Table name="q_fact" schema="public" alias="fatoQualidade">
     </Table>
     <DimensionUsage source="DimTempo" name="Tempo" caption="Ano" visible="true" foreignKey="ano" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="DimPessoa" name="Pessoa" caption="Nome" visible="true" foreignKey="nome">
+    <DimensionUsage source="DimPessoa" name="Pessoa" caption="Nome" visible="true" foreignKey="nome" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimCargo" name="Cargo" caption="Cargo" visible="true" foreignKey="cargo">
     </DimensionUsage>
     <Measure name="corretudeMiseraveis" column="q_corretude_qtdpobres" datatype="Numeric" aggregator="min" caption="corretudeMiseraveis" visible="true">
     </Measure>
     <Measure name="completudeMiseraveis" column="q_completude_pobres_quantidade" datatype="Numeric" aggregator="max" caption="completudeMiseraveis" visible="true">
+    </Measure>
+    <Measure name="corretudePIB" column="q_corretude_pib" datatype="Numeric" aggregator="max" caption="corretudePIB" visible="true">
+    </Measure>
+    <Measure name="completudePIB" column="q_completude_pib" datatype="Numeric" aggregator="max" caption="completudePIB" visible="true">
+    </Measure>
+    <Measure name="corretudeCampi" column="q_corretude_pib" datatype="Numeric" aggregator="max" caption="corretudeCampi" visible="true">
+    </Measure>
+    <Measure name="completudeCampi" column="q_completude_campi" datatype="Numeric" aggregator="max" caption="completudeCampi" visible="true">
     </Measure>
   </Cube>
 </Schema>
