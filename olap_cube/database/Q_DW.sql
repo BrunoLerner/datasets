@@ -5,7 +5,7 @@
 -- Dumped from database version 9.4.18
 -- Dumped by pg_dump version 10.4
 
--- Started on 2018-09-12 20:12:26
+-- Started on 2018-09-18 20:08:39
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -78,23 +78,23 @@ ALTER TABLE public.dim_tempo OWNER TO postgres;
 
 --
 -- TOC entry 173 (class 1259 OID 16437)
--- Name: fact_1; Type: TABLE; Schema: public; Owner: postgres
+-- Name: q_fact; Type: TABLE; Schema: public; Owner: postgres
 --
 
-CREATE TABLE public.fact_1 (
+CREATE TABLE public.q_fact (
     ano character varying,
-    nome character varying,
-    cargo character varying,
     q_corretude_qtdpobres double precision,
     q_corretude_pib double precision,
     q_corretude_campi double precision,
+    nome character varying,
+    cargo character varying,
     q_completude_pobres_quantidade double precision,
     q_completude_pib double precision,
     q_completude_campi double precision
 );
 
 
-ALTER TABLE public.fact_1 OWNER TO postgres;
+ALTER TABLE public.q_fact OWNER TO postgres;
 
 --
 -- TOC entry 2005 (class 0 OID 16446)
@@ -259,69 +259,69 @@ COPY public.dim_tempo (ano) FROM stdin;
 --
 -- TOC entry 2004 (class 0 OID 16437)
 -- Dependencies: 173
--- Data for Name: fact_1; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: q_fact; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.fact_1 (ano, q_corretude_qtdpobres, q_corretude_pib, q_corretude_campi, nome, cargo, q_completude_pobres_quantidade, q_completude_pib, q_completude_campi) FROM stdin;
-1910	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	\N	\N	\N
-1911	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	\N	\N	\N
-1912	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	\N	\N	\N
-1913	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	\N	\N	\N
-1914	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	\N	\N	\N
-1927	\N	\N	\N	JÃºlio_Prestes	President of Brazil	\N	\N	\N
-1928	\N	\N	\N	JÃºlio_Prestes	President of Brazil	\N	\N	\N
-1929	\N	\N	\N	JÃºlio_Prestes	President of Brazil	\N	\N	\N
-1930	\N	\N	\N	JÃºlio_Prestes	President of Brazil	\N	\N	\N
-1980	\N	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	\N	\N
-1981	\N	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	\N	\N
-1982	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	\N	\N
-1983	0.0030000000000000001	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	\N	\N
-1984	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	\N	\N
-1985	0.68000000000000005	\N	\N	JosÃ©_Sarney	President of Brazil	1	\N	\N
-1985	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	\N	\N
-1986	0.0030000000000000001	\N	\N	JosÃ©_Sarney	President of Brazil	1	\N	\N
-1986	0.0030000000000000001	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	\N	\N
-1987	0.0030000000000000001	\N	\N	JosÃ©_Sarney	President of Brazil	0.83299999999999996	\N	\N
-1987	0.0030000000000000001	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0.83299999999999996	\N	\N
-1988	0.13600000000000001	\N	\N	JosÃ©_Sarney	President of Brazil	0.83299999999999996	\N	\N
-1988	0.13600000000000001	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0.83299999999999996	\N	\N
-1989	0.68000000000000005	\N	\N	JosÃ©_Sarney	President of Brazil	0.83299999999999996	\N	\N
-1989	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0.83299999999999996	\N	\N
-1990	0.68000000000000005	\N	\N	Itamar_Franco	Vice President of Brazil	\N	\N	\N
-1990	0.68000000000000005	\N	\N	JosÃ©_Sarney	President of Brazil	\N	\N	\N
-1990	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	\N	\N	\N
-1991	\N	\N	\N	Itamar_Franco	Vice President of Brazil	0.66600000000000004	\N	\N
-1991	\N	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0.66600000000000004	\N	\N
-1992	0.68000000000000005	\N	\N	Itamar_Franco	President of Brazil	0.66600000000000004	\N	\N
-1992	0.68000000000000005	\N	\N	Itamar_Franco	Vice President of Brazil	0.66600000000000004	\N	\N
-1992	0.68000000000000005	\N	\N	Fernando_Henrique_Cardoso	Minister of External Relations	0.66600000000000004	\N	\N
-1992	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0.66600000000000004	\N	\N
-1993	0.68000000000000005	\N	\N	Itamar_Franco	President of Brazil	\N	\N	\N
-1993	0.68000000000000005	\N	\N	Fernando_Henrique_Cardoso	Minister of Finance	\N	\N	\N
-1993	0.68000000000000005	\N	\N	Fernando_Henrique_Cardoso	Minister of External Relations	\N	\N	\N
-1993	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	\N	\N	\N
-1994	\N	\N	\N	Itamar_Franco	President of Brazil	0.83299999999999996	\N	\N
-1994	\N	\N	\N	Fernando_Henrique_Cardoso	Minister of Finance	0.83299999999999996	\N	\N
-1994	\N	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0.83299999999999996	\N	\N
-1995	0.0030000000000000001	\N	\N	Itamar_Franco	President of Brazil	0.83299999999999996	1	\N
-1995	0.0030000000000000001	\N	\N	Fernando_Henrique_Cardoso	President of Brazil	0.83299999999999996	1	\N
-1996	0.68000000000000005	0.68000000000000005	\N	Fernando_Henrique_Cardoso	President of Brazil	0.66600000000000004	1	\N
-1997	0.68000000000000005	0.0030000000000000001	\N	Fernando_Henrique_Cardoso	President of Brazil	0.83299999999999996	1	\N
-1998	0.68000000000000005	0.0030000000000000001	\N	Fernando_Henrique_Cardoso	President of Brazil	0.83299999999999996	1	\N
-1999	0.68000000000000005	0.0030000000000000001	\N	Itamar_Franco	36thGovernor of Minas Gerais	\N	1	\N
-1999	0.68000000000000005	0.0030000000000000001	\N	Fernando_Henrique_Cardoso	President of Brazil	\N	1	\N
-2000	\N	0.68000000000000005	\N	Itamar_Franco	36thGovernor of Minas Gerais	0.83299999999999996	1	1
-2000	\N	0.68000000000000005	\N	Fernando_Henrique_Cardoso	President of Brazil	0.83299999999999996	1	1
+COPY public.q_fact (ano, q_corretude_qtdpobres, q_corretude_pib, q_corretude_campi, nome, cargo, q_completude_pobres_quantidade, q_completude_pib, q_completude_campi) FROM stdin;
+1910	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	0	0	0
+1911	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	0	0	0
+1912	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	0	0	0
+1913	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	0	0	0
+1914	\N	\N	\N	Hermes_da_Fonseca	President of Brazil	0	0	0
+1927	\N	\N	\N	JÃºlio_Prestes	President of Brazil	0	0	0
+1928	\N	\N	\N	JÃºlio_Prestes	President of Brazil	0	0	0
+1929	\N	\N	\N	JÃºlio_Prestes	President of Brazil	0	0	0
+1930	\N	\N	\N	JÃºlio_Prestes	President of Brazil	0	0	0
+1980	\N	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0	0	0
+1981	\N	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	0	0
+1982	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	0	0
+1983	0.0030000000000000001	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	0	0
+1984	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	0	0
+1985	0.68000000000000005	\N	\N	JosÃ©_Sarney	President of Brazil	1	0	0
+1985	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	0	0
+1986	0.0030000000000000001	\N	\N	JosÃ©_Sarney	President of Brazil	1	0	0
+1986	0.0030000000000000001	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	1	0	0
+1987	0.0030000000000000001	\N	\N	JosÃ©_Sarney	President of Brazil	0.83299999999999996	0	0
+1987	0.0030000000000000001	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0.83299999999999996	0	0
+1988	0.13600000000000001	\N	\N	JosÃ©_Sarney	President of Brazil	0.83299999999999996	0	0
+1988	0.13600000000000001	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0.83299999999999996	0	0
+1989	0.68000000000000005	\N	\N	JosÃ©_Sarney	President of Brazil	0.83299999999999996	0	0
+1989	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0.83299999999999996	0	0
+1990	0.68000000000000005	\N	\N	Itamar_Franco	Vice President of Brazil	0.83299999999999996	0	0
+1990	0.68000000000000005	\N	\N	JosÃ©_Sarney	President of Brazil	0.83299999999999996	0	0
+1990	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0.83299999999999996	0	0
+1991	\N	\N	\N	Itamar_Franco	Vice President of Brazil	0	0	0
+1991	\N	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0	0	0
+1992	0.68000000000000005	\N	\N	Itamar_Franco	President of Brazil	0.66600000000000004	0	0
+1992	0.68000000000000005	\N	\N	Itamar_Franco	Vice President of Brazil	0.66600000000000004	0	0
+1992	0.68000000000000005	\N	\N	Fernando_Henrique_Cardoso	Minister of External Relations	0.66600000000000004	0	0
+1992	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0.66600000000000004	0	0
+1993	0.68000000000000005	\N	\N	Itamar_Franco	President of Brazil	0.66600000000000004	0	0
+1993	0.68000000000000005	\N	\N	Fernando_Henrique_Cardoso	Minister of Finance	0.66600000000000004	0	0
+1993	0.68000000000000005	\N	\N	Fernando_Henrique_Cardoso	Minister of External Relations	0.66600000000000004	0	0
+1993	0.68000000000000005	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0.66600000000000004	0	0
+1994	\N	\N	\N	Itamar_Franco	President of Brazil	0	0	0
+1994	\N	\N	\N	Fernando_Henrique_Cardoso	Minister of Finance	0	0	0
+1994	\N	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	President of the Workers' Party	0	0	0
+1995	0.0030000000000000001	\N	\N	Itamar_Franco	President of Brazil	0.83299999999999996	1	0
+1995	0.0030000000000000001	\N	\N	Fernando_Henrique_Cardoso	President of Brazil	0.83299999999999996	1	0
+1996	0.68000000000000005	0.68000000000000005	\N	Fernando_Henrique_Cardoso	President of Brazil	0.66600000000000004	1	0
+1997	0.68000000000000005	0.0030000000000000001	\N	Fernando_Henrique_Cardoso	President of Brazil	0.83299999999999996	1	0
+1998	0.68000000000000005	0.0030000000000000001	\N	Fernando_Henrique_Cardoso	President of Brazil	0.83299999999999996	1	0
+1999	0.68000000000000005	0.0030000000000000001	\N	Itamar_Franco	36thGovernor of Minas Gerais	0.83299999999999996	1	0
+1999	0.68000000000000005	0.0030000000000000001	\N	Fernando_Henrique_Cardoso	President of Brazil	0.83299999999999996	1	0
+2000	\N	0.68000000000000005	\N	Itamar_Franco	36thGovernor of Minas Gerais	0	1	1
+2000	\N	0.68000000000000005	\N	Fernando_Henrique_Cardoso	President of Brazil	0	1	1
 2001	0.68000000000000005	0.68000000000000005	0.14599999999999999	Itamar_Franco	36thGovernor of Minas Gerais	0.83299999999999996	1	1
 2001	0.68000000000000005	0.68000000000000005	0.14599999999999999	Fernando_Henrique_Cardoso	President of Brazil	0.83299999999999996	1	1
 2001	0.68000000000000005	0.68000000000000005	0.14599999999999999	Michel_Temer	President of theBrazilian Democratic Movement Party	0.83299999999999996	1	1
 2002	0.68000000000000005	0.68000000000000005	0.82999999999999996	Itamar_Franco	36thGovernor of Minas Gerais	0.83299999999999996	1	1
 2002	0.68000000000000005	0.68000000000000005	0.82999999999999996	Fernando_Henrique_Cardoso	President of Brazil	0.83299999999999996	1	1
 2002	0.68000000000000005	0.68000000000000005	0.82999999999999996	Michel_Temer	President of theBrazilian Democratic Movement Party	0.83299999999999996	1	1
-2003	0.68000000000000005	0.68000000000000005	0.82999999999999996	Dilma_Rousseff	Minister of Mines and Energy	1	1	1
-2003	0.68000000000000005	0.68000000000000005	0.82999999999999996	Fernando_Henrique_Cardoso	President of Brazil	1	1	1
-2003	0.68000000000000005	0.68000000000000005	0.82999999999999996	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	1	1	1
-2003	0.68000000000000005	0.68000000000000005	0.82999999999999996	Michel_Temer	President of theBrazilian Democratic Movement Party	1	1	1
+2003	0.68000000000000005	0.68000000000000005	0.82999999999999996	Dilma_Rousseff	Minister of Mines and Energy	0.83299999999999996	1	1
+2003	0.68000000000000005	0.68000000000000005	0.82999999999999996	Fernando_Henrique_Cardoso	President of Brazil	0.83299999999999996	1	1
+2003	0.68000000000000005	0.68000000000000005	0.82999999999999996	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	0.83299999999999996	1	1
+2003	0.68000000000000005	0.68000000000000005	0.82999999999999996	Michel_Temer	President of theBrazilian Democratic Movement Party	0.83299999999999996	1	1
 2004	0.68000000000000005	0.68000000000000005	0.82999999999999996	Dilma_Rousseff	Minister of Mines and Energy	1	1	1
 2004	0.68000000000000005	0.68000000000000005	0.82999999999999996	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	1	1	1
 2004	0.68000000000000005	0.68000000000000005	0.82999999999999996	Michel_Temer	President of theBrazilian Democratic Movement Party	1	1	1
@@ -329,23 +329,23 @@ COPY public.fact_1 (ano, q_corretude_qtdpobres, q_corretude_pib, q_corretude_cam
 2005	0.68000000000000005	0.68000000000000005	0.14599999999999999	Dilma_Rousseff	Minister of Mines and Energy	1	1	1
 2005	0.68000000000000005	0.68000000000000005	0.14599999999999999	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	1	1	1
 2005	0.68000000000000005	0.68000000000000005	0.14599999999999999	Michel_Temer	President of theBrazilian Democratic Movement Party	1	1	1
-2006	0.68000000000000005	0.68000000000000005	0.001	Dilma_Rousseff	Chief of Staff of the Presidency	0.83299999999999996	1	1
-2006	0.68000000000000005	0.68000000000000005	0.001	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	0.83299999999999996	1	1
-2006	0.68000000000000005	0.68000000000000005	0.001	Michel_Temer	President of theBrazilian Democratic Movement Party	0.83299999999999996	1	1
+2006	0.68000000000000005	0.68000000000000005	0.001	Dilma_Rousseff	Chief of Staff of the Presidency	1	1	1
+2006	0.68000000000000005	0.68000000000000005	0.001	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	1	1	1
+2006	0.68000000000000005	0.68000000000000005	0.001	Michel_Temer	President of theBrazilian Democratic Movement Party	1	1	1
 2007	0.68000000000000005	0.68000000000000005	0.82999999999999996	Dilma_Rousseff	Chief of Staff of the Presidency	0.83299999999999996	1	1
 2007	0.68000000000000005	0.68000000000000005	0.82999999999999996	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	0.83299999999999996	1	1
 2007	0.68000000000000005	0.68000000000000005	0.82999999999999996	Michel_Temer	President of theBrazilian Democratic Movement Party	0.83299999999999996	1	1
 2008	0.68000000000000005	0.0030000000000000001	0.14599999999999999	Dilma_Rousseff	Chief of Staff of the Presidency	0.83299999999999996	1	1
 2008	0.68000000000000005	0.0030000000000000001	0.14599999999999999	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	0.83299999999999996	1	1
 2008	0.68000000000000005	0.0030000000000000001	0.14599999999999999	Michel_Temer	President of theBrazilian Democratic Movement Party	0.83299999999999996	1	1
-2009	0.68000000000000005	0.68000000000000005	0.82999999999999996	Dilma_Rousseff	Chief of Staff of the Presidency	\N	1	1
-2009	0.68000000000000005	0.68000000000000005	0.82999999999999996	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	\N	1	1
-2009	0.68000000000000005	0.68000000000000005	0.82999999999999996	Michel_Temer	President of the Chamber of Deputies	\N	1	1
-2009	0.68000000000000005	0.68000000000000005	0.82999999999999996	Michel_Temer	President of theBrazilian Democratic Movement Party	\N	1	1
-2010	\N	0.0030000000000000001	0.82999999999999996	Dilma_Rousseff	Chief of Staff of the Presidency	0.83299999999999996	1	1
-2010	\N	0.0030000000000000001	0.82999999999999996	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	0.83299999999999996	1	1
-2010	\N	0.0030000000000000001	0.82999999999999996	Michel_Temer	President of the Chamber of Deputies	0.83299999999999996	1	1
-2010	\N	0.0030000000000000001	0.82999999999999996	Michel_Temer	President of theBrazilian Democratic Movement Party	0.83299999999999996	1	1
+2009	0.68000000000000005	0.68000000000000005	0.82999999999999996	Dilma_Rousseff	Chief of Staff of the Presidency	0.83299999999999996	1	1
+2009	0.68000000000000005	0.68000000000000005	0.82999999999999996	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	0.83299999999999996	1	1
+2009	0.68000000000000005	0.68000000000000005	0.82999999999999996	Michel_Temer	President of the Chamber of Deputies	0.83299999999999996	1	1
+2009	0.68000000000000005	0.68000000000000005	0.82999999999999996	Michel_Temer	President of theBrazilian Democratic Movement Party	0.83299999999999996	1	1
+2010	\N	0.0030000000000000001	0.82999999999999996	Dilma_Rousseff	Chief of Staff of the Presidency	0	1	1
+2010	\N	0.0030000000000000001	0.82999999999999996	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	0	1	1
+2010	\N	0.0030000000000000001	0.82999999999999996	Michel_Temer	President of the Chamber of Deputies	0	1	1
+2010	\N	0.0030000000000000001	0.82999999999999996	Michel_Temer	President of theBrazilian Democratic Movement Party	0	1	1
 2011	0.68000000000000005	0.0030000000000000001	0.82999999999999996	Itamar_Franco	Federal SenatorforMinas Gerais	0.83299999999999996	0.83299999999999996	1
 2011	0.68000000000000005	0.0030000000000000001	0.82999999999999996	Dilma_Rousseff	36thPresident of Brazil	0.83299999999999996	0.83299999999999996	1
 2011	0.68000000000000005	0.0030000000000000001	0.82999999999999996	Luiz_InÃ¡cio_Lula_da_Silva	35thPresident of Brazil	0.83299999999999996	0.83299999999999996	1
@@ -356,8 +356,8 @@ COPY public.fact_1 (ano, q_corretude_qtdpobres, q_corretude_pib, q_corretude_cam
 2013	0.68000000000000005	0.0030000000000000001	0.82999999999999996	Michel_Temer	President of theBrazilian Democratic Movement Party	0.83299999999999996	0.83299999999999996	1
 2014	0.68000000000000005	\N	0.82999999999999996	Dilma_Rousseff	36thPresident of Brazil	0.83299999999999996	\N	1
 2014	0.68000000000000005	\N	0.82999999999999996	Michel_Temer	President of theBrazilian Democratic Movement Party	0.83299999999999996	\N	1
-2015	0.68000000000000005	\N	\N	Dilma_Rousseff	36thPresident of Brazil	\N	\N	\N
-2015	0.68000000000000005	\N	\N	Michel_Temer	President of theBrazilian Democratic Movement Party	\N	\N	\N
+2015	0.68000000000000005	\N	\N	Dilma_Rousseff	36thPresident of Brazil	0.83299999999999996	\N	\N
+2015	0.68000000000000005	\N	\N	Michel_Temer	President of theBrazilian Democratic Movement Party	0.83299999999999996	\N	\N
 2016	\N	\N	\N	Dilma_Rousseff	36thPresident of Brazil	\N	\N	\N
 2016	\N	\N	\N	Luiz_InÃ¡cio_Lula_da_Silva	Chief of Staff of the Presidency	\N	\N	\N
 2016	\N	\N	\N	Michel_Temer	President of theBrazilian Democratic Movement Party	\N	\N	\N
@@ -376,7 +376,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2018-09-12 20:12:26
+-- Completed on 2018-09-18 20:08:41
 
 --
 -- PostgreSQL database dump complete
