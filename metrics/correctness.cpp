@@ -82,9 +82,8 @@ vector<Data> correctnessProb(vector<Data> dados)
 
 /* Definir parâmetros */
 
-    long double alpha=sigma/E;
-    long double beta=alpha*alpha;
-    long double r=(1+alpha)/(1+beta);
+    long double beta=V/(E*E);
+    long double r=1/(1+beta);
 
 /* Classificação */
 
