@@ -38,21 +38,22 @@ long double Variancia(vector<Data> v)
     long double V, u;
     long len=v.size();
 
-    vector<long double> _v;
+    vector<Data> _v (len);
     for(int i=0; i<len; i++)
     {
-        _v.push_back(pow(v[i].y, 2));
+        _v[i].x=v[i].x;
+        _v[i].y=(v[i].y)*(v[i].y);
     }
-    V=Esperanca(_v)-pow(Esperanca(v), 2);
+    V=Esperanca(_v)-Esperanca(v)*Esperanca(v);
 
     return V;
 }
 
 vector<Data> correctnessProb(vector<Data> dados)
 {
-    sizeOfArray= dados.size();
+    long sizeOfArray= dados.size();
 
-/* Definindo diferenÃ§as */
+/* Definindo diferenças */
 
     vector<Data> comDif (sizeOfArray-1);
     for(int i=0; i< sizeOfArray-1; i++)
@@ -61,31 +62,31 @@ vector<Data> correctnessProb(vector<Data> dados)
         comDif[i].y=dados[i+1].y-dados[i].y;
     }
 
-/* CÃ¡lculo EsperanÃ§a */
+/* Cálculo Esperança */
 
     long double E=Esperanca(comDif);
 
-/* Exibir EsperanÃ§a */
+/* Exibir Esperança */
 
     cout << E << endl;
 
     long double V=Variancia(comDif);
 
-/* Calculo Desvio PadrÃ£o */
+/* Calculo Desvio Padrão */
 
     long double sigma=sqrt(V);
 
-/* Exibir Desvio PadrÃ£o */
+/* Exibir Desvio Padrão */
 
-    cout << V << " " << u << endl;
+    cout << V << " " << sigma << endl;
 
-/* Definir parÃ¢metros */
+/* Definir parâmetros */
 
     long double alpha=sigma/E;
-    long double beta=pow(alpha, 2);
+    long double beta=alpha*alpha;
     long double r=(1+alpha)/(1+beta);
 
-/* ClassificaÃ§Ã£o */
+/* Classificação */
 
     vector<Data> probabilidade (sizeOfArray-1);
 
@@ -101,33 +102,33 @@ vector<Data> correctnessProb(vector<Data> dados)
     {
         if((comDif[i].y>interval_0)&&(comDif[i].y<interval_1))
         {
-            /* Valores determinados baseados na distribuiÃ§Ã£o normal */
+            /* Valores determinados baseados na distribuição normal */
 
             probabilidade[i].y=0.52+r*0.48;
         }
 
-        if(((comDif[i].y>interval_0-u)&&(comDif[i].y<interval_0))||((comDif[i].y>interval_1)&&(comDif[i].y<interval_1+u)))
+        if(((comDif[i].y>interval_0-sigma)&&(comDif[i].y<interval_0))||((comDif[i].y>interval_1)&&(comDif[i].y<interval_1+sigma)))
         {
-            /* Valores determinados baseados na distribuiÃ§Ã£o normal */
+            /* Valores determinados baseados na distribuição normal */
             probabilidade[i].y=0.136*(1-r);
         }
 
-        if(((comDif[i].y>interval_0-2u)&&(comDif[i].y<interval_0-u))||((comDif[i].y>interval_1+u)&&(comDif[i].y<interval_1+2u)))
+        if(((comDif[i].y>interval_0-2*sigma)&&(comDif[i].y<interval_0-sigma))||((comDif[i].y>interval_1+sigma)&&(comDif[i].y<interval_1+2*sigma)))
         {
-            /* Valores determinados baseados na distribuiÃ§Ã£o normal */
+            /* Valores determinados baseados na distribuição normal */
             probabilidade[i].y=0.021*(1-r);
         }
 
-        if((comDif[i].y<interval_0-2u)||(comDif[i].y>interval_1+2u))
+        if((comDif[i].y<interval_0-2*sigma)||(comDif[i].y>interval_1+2*sigma))
         {
-            /* Valores determinados baseados na distribuiÃ§Ã£o normal */
+            /* Valores determinados baseados na distribuição normal */
             probabilidade[i].y=0.003*(1-r);
         }
 
         cout << probabilidade[i].x << "," << probabilidade[i].y << endl;
     }
 
-/* Definir o retorno da funÃ§Ã£o em funÃ§Ã£o de comDif */
+/* Definir o retorno da função em função de comDif */
 
     vector<Data> cD_Return;
 
@@ -190,7 +191,7 @@ int main()
     valores[14].x=2014;
     valores[14].y=304;
 
-/* Fim definiÃ§Ã£o */
+/* Fim definição */
 
     correctnessProb(valores);
 
